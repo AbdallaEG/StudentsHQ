@@ -29,12 +29,7 @@ function Home() {
         {/*  Page sections */}
         <HeroHome />
         <Process />
-        <FeaturesHome />
-        <Tabs />
-        <Target />
-        <News />
-        <Newsletter />
-
+        
       </main>
 
       {/*  Site footer */}
