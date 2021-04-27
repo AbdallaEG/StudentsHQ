@@ -3,22 +3,9 @@ import React from 'react';
 function Process() {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-10 pb-12 md:pt-16 md:pb-20">
+      <div className="max-w-6xl mx-auto pl-4 pr-4">
+        <div className="pb-12 md:pb-20">
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4" data-aos="fade-up">
-              Ta første steget mot en studietrelatert karriere
-            </h2>
-            <p
-              className="text-xl text-gray-400"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Ta første steget mot en studietrelatert karriere og få tilbud om jobb
-              utemå sende en eneste søknad{" "}
-            </p>
-          </div>
 
           {/* Items */}
           <div className="max-w-sm mx-auto grid gap-8 md:grid-cols-3 lg:gap-16 items-start md:max-w-none">
@@ -64,12 +51,13 @@ function Process() {
                   strokeLinecap="square"
                 />
               </svg>
-              <h4 className="h4 mb-2">
-                <span className="text-gray-400">1</span>. Acquisition
+              <h4 className="h4 font-special mb-2">
+                <span className="text-gray-400">1</span>. Registrering
               </h4>
               <p className="text-lg text-gray-400 text-center">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+                Studnetex er en stor platform med masse arbeidsmuligheter og
+                givende oppdrag. Registrer deg med epost, studieretning og hva
+                du ønsker å jobbe med.
               </p>
             </div>
 
@@ -116,12 +104,13 @@ function Process() {
                   />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">
-                <span className="text-gray-400">2</span>. Activation
+              <h4 className="h4 font-special mb-2">
+                <span className="text-gray-400">2</span>. Intervju
               </h4>
               <p className="text-lg text-gray-400 text-center">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+                En av våre konsultener tar kontakt i løpet av en uke, gir deg et
+                innblikk av prosjektet og lønnsnivå. Om det er av intresse, så
+                planlegger vi et intervju så snart det lar seg gjøre.
               </p>
             </div>
 
@@ -157,12 +146,13 @@ function Process() {
                   strokeLinecap="square"
                 />
               </svg>
-              <h4 className="h4 mb-2">
-                <span className="text-gray-400">3</span>. Retention
+              <h4 className="h4 font-special  mb-2">
+                <span className="text-gray-400">3</span>. Signering
               </h4>
-              <p className="text-lg text-gray-400 text-center">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+              <p className="text-lg text-gray-400  font-special text-center">
+                Etter et vellykket intervju vil du motta tilbud om jobb og en
+                møte-invitasjon der vi går gjennom ansattelsegoder og
+                informasjon knyttet til oppstart.
               </p>
             </div>
           </div>

@@ -37,7 +37,8 @@ module.exports = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        'architects-daughter': ['"Architects Daughter"', 'sans-serif']
+        'architects-daughter': ['"Architects Daughter"', 'sans-serif'],
+        "special":[ '"Comfortaa"', "cursive"]
       },
       fontSize: {
         xs: '0.75rem',

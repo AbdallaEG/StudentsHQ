@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Modal from '../utils/Modal';
+import React from 'react';
 
+import { Link } from "react-router-dom";
 function HeroHome() {
 
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  
 
   return (
     <section>
@@ -46,36 +46,29 @@ function HeroHome() {
         </div>
 
         {/* Hero content */}
-        <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
+        <div className="relative pt-24  md:p24 ">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-4" data-aos="fade-up">
-              Få tilbud om jobb uten å sende en eneste søknad
+            <h1 className="h1 mb-4 text-2xl	md:text-5xl font-special " data-aos="fade-up">
+              Ønsker du en relevant deltidsjobb/internship til din
+              studieretning?
             </h1>
             <p
-              className="text-xl text-gray-400 mb-8"
+              className="md:text-xl text-gray-400 mb-8 text-lg"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Er du en dyktig student som er på uttik etter en relevant
-              deltidsjobb/internship til din studieretning?
+              Ta første steget mot en studietrelatert karriere og få tilbud om
+              jobb uten å sende en eneste søknad
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
-                <a
-                  className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
-                  href="#0"
+                <Link
+                  to="/signup"
+                  className="btn-sm text-white bg-purple-600 hover:bg-purple-700"
                 >
-                  Sign up
-                </a>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="600">
-                <a
-                  className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
-                  href="#0"
-                >
-                  Les mer
-                </a>
+                  Registrer
+                </Link>
               </div>
             </div>
           </div>

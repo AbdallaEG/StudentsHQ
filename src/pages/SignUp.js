@@ -1,98 +1,248 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import firebase from "firebase/app";
 
-import Header from '../partials/Header';
-import PageIllustration from '../partials/PageIllustration';
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/database";
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
 
+import Header from "../partials/Header";
+import PageIllustration from "../partials/PageIllustration";
+import { useState } from "react";
 function SignUp() {
+  const history = useHistory();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [degree, setDegree] = useState("");
+  const [type, setType] = useState("");
+  const [year, setYear] = useState("");
+  const [info, setInfo] = useState("");
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleNumber = (event) => {
+    setNumber(event.target.value);
+  };
+  const handleDegree = (event) => {
+    setDegree(event.target.value);
+  };
+  const handleType = (event) => {
+    setType(event.target.value);
+  };
+  const handleYear = (event) => {
+    setYear(event.target.value);
+  };
+  const handleInfo = (event) => {
+    setInfo(event.target.value);
+  };
+  const onSubmit = (event) => {
+    
+
+    event.preventDefault();
+    const data = {
+      CandidateName: name,
+      CandidateEmail: email,
+      CandidateNumber: number,
+      degree: degree,
+      degreeType: type,
+      degreeYear: year,
+      info: info,
+    };
+    firebase.database().ref("Signups/" + number).set(data);
+    history.push("/contact")
+  };
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-
       {/*  Site header */}
       <Header />
 
       {/*  Page content */}
       <main className="flex-grow">
-
         {/*  Page illustration */}
-        <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="relative max-w-6xl mx-auto h-0 pointer-events-none"
+          aria-hidden="true"
+        >
           <PageIllustration />
         </div>
 
         <section className="relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-
+            <div className="pt-12 pb-12 md:pt-24 md:pb-20">
               {/* Page header */}
-              <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Welcome. We exist to make entrepreneurship easier.</h1>
+              <div className="max-w-3xl mx-auto text-center pb-4 pr-2 text-grey font-special pt-8 md:pt-0 ">
+                <h1 className="h1">Studentex</h1>
               </div>
 
               {/* Form */}
-              <div className="max-w-sm mx-auto">
-                <form>
-                  <div className="flex flex-wrap -mx-3">
+              <div className="max-w-sm  font-special mx-auto">
+                <form onSubmit={onSubmit}>
+                  <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <button className="btn px-0 text-white bg-red-600 hover:bg-red-700 w-full relative flex items-center">
-                        <svg className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" />
-                        </svg>
-                        <span className="h-6 flex items-center border-r border-white border-opacity-25 mr-4" aria-hidden="true"></span>
-                        <span className="flex-auto pl-16 pr-8 -ml-16">Sign up with Google</span>
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="full-name"
+                      >
+                        Fornavn og Etternavn{" "}
+                        <span className="text-red-600">*</span>
+                      </label>
+                      <input
+                        id="full-name"
+                        type="text"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-input w-full text-gray-300"
+                        placeholder="Fornavn og Etternavn"
+                        required
+                        onChange={handleName}
+                        value={name}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="email"
+                      >
+                        Epost <span className="text-red-600">*</span>
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-input w-full text-gray-300"
+                        placeholder="you@yourcompany.com"
+                        required
+                        onChange={handleEmail}
+                        value={email}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="company-name"
+                      >
+                        Telefon <span className="text-red-600">*</span>
+                      </label>
+                      <input
+                        type="integer"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-input w-full text-gray-300"
+                        placeholder="46336445"
+                        required
+                        onChange={handleNumber}
+                        value={number}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="company-name"
+                      >
+                        Studieretning <span className="text-red-600">*</span>
+                      </label>
+                      <input
+                        id="company-name"
+                        type="text"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-input w-full text-gray-300"
+                        placeholder="Navn på studiet"
+                        required
+                        onChange={handleDegree}
+                        value={degree}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="country"
+                      >
+                        Grad
+                        <span className="text-red-600">*</span>
+                      </label>
+                      <select
+                        id="country"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-select w-full text-gray-300"
+                        value={type}
+                        onChange={handleType}
+                      >
+                        <option>Bachelor</option>
+                        <option>Master</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="country"
+                      >
+                        Studieår
+                        <span className="text-red-600">*</span>
+                      </label>
+                      <select
+                        id="country"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-select w-full text-gray-300"
+                        value={year}
+                        onChange={handleYear}
+                      >
+                        <option>Første</option>
+                        <option>Andre</option>
+                        <option>Tredje</option>
+                        <option>Fjerde</option>
+                        <option>Femte</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label
+                        className="block text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="message"
+                      >
+                        Fagområder du ønsker å jobbe med{" "}
+                      </label>
+                      <textarea
+                        id="message"
+                        rows="4"
+                        className="focus:outline-none focus:ring focus:border-blue-300 form-textarea w-full text-gray-300"
+                        placeholder="Kort om det du brenner for..."
+                        onChange={handleInfo}
+                        value={info}
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-500 text-center">
+                    Jeg samtykker å bli kontaktet av Studentex angående et jobb
+                    tilbud i henhold til Studentex{" "}
+                    <Link
+                      to="#"
+                      className="underline text-gray-400 hover:text-gray-200 hover:no-underline transition duration-150 ease-in-out"
+                    >
+                      personvernregler.
+                    </Link>
+                    .
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mt-6">
+                    <div className="w-full px-3">
+                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">
+                        Send inn
                       </button>
                     </div>
                   </div>
                 </form>
-                <div className="flex items-center my-6">
-                  <div className="border-t border-gray-700 border-dotted flex-grow mr-3" aria-hidden="true"></div>
-                  <div className="text-gray-400">Or, register with your email</div>
-                  <div className="border-t border-gray-700 border-dotted flex-grow ml-3" aria-hidden="true"></div>
-                </div>
-                <form>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="full-name">Full Name <span className="text-red-600">*</span></label>
-                      <input id="full-name" type="text" className="form-input w-full text-gray-300" placeholder="First and last name" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="company-name">Company Name <span className="text-red-600">*</span></label>
-                      <input id="company-name" type="text" className="form-input w-full text-gray-300" placeholder="Your company or app name" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Work Email <span className="text-red-600">*</span></label>
-                      <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="password">Password <span className="text-red-600">*</span></label>
-                      <input id="password" type="password" className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required />
-                    </div>
-                  </div>
-                  <div className="text-sm text-gray-500 text-center">
-                    I agree to be contacted by Open PRO about this offer as per the Open PRO <Link to="#" className="underline text-gray-400 hover:text-gray-200 hover:no-underline transition duration-150 ease-in-out">Privacy Policy</Link>.
-                                </div>
-                  <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign up</button>
-                    </div>
-                  </div>
-                </form>
-                <div className="text-gray-400 text-center mt-6">
-                  Already using Open PRO? <Link to="signin" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign in</Link>
-                </div>
               </div>
-
             </div>
           </div>
         </section>
-
       </main>
-
     </div>
   );
 }

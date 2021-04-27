@@ -6,7 +6,7 @@ function HeroAbout() {
 
       {/* Background image */}
       <div className="absolute inset-0">
-        <img className="w-full h-full object-cover" src={require('../images/about-hero.jpg')} width="1440" height="394" alt="About" />
+        <img className="w-full h-full object-cover" src={'./about-hero.jpg'} width="1440" height="394" alt="About" />
         <div className="absolute inset-0 bg-gray-900 opacity-75" aria-hidden="true"></div>
       </div>
 
