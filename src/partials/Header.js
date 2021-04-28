@@ -62,7 +62,7 @@ function Header() {
                   to="/signup"
                   className="hidden sm:block btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3"
                 >
-                  Registrer
+                  Registrer deg
                 </Link>
               </li>
             </ul>
@@ -113,7 +113,7 @@ function Header() {
                     to="/signup"
                     className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out"
                   >
-                    Registrer
+                    Registrer deg
                   </Link>
                 </li>
               </ul>

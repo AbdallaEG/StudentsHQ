@@ -8,7 +8,7 @@ function Clients() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Our customers span the globe</h1>
+            <h1 className="h2 mb-4">En</h1>
             <p className="text-xl text-gray-400">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
 

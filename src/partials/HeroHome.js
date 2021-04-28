@@ -67,7 +67,7 @@ function HeroHome() {
                   to="/signup"
                   className="btn-sm text-white bg-purple-600 hover:bg-purple-700"
                 >
-                  Registrer
+                  Registrer deg
                 </Link>
               </div>
             </div>

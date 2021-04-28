@@ -5,7 +5,6 @@ import PageIllustration from '../partials/PageIllustration';
 import HeroHome from '../partials/HeroHome';
 import Process from '../partials/Process';
 import Newsletter from "../partials/Newsletter";
-
 import Footer from '../partials/Footer';
 
 function Home() {
@@ -25,12 +24,15 @@ function Home() {
         </div>
         {/*  Page sections */}
         <HeroHome />
+
         <Process />
+        
         <Newsletter />
       </main>
 
       {/*  Site footer */}
       <Footer />
+      
     </div>
   );
 }

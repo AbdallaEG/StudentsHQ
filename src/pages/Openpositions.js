@@ -1,9 +1,10 @@
 import React from "react";
 
-import Newsletter from "../partials/Newsletter";
+
 import Header from "../partials/Header";
 import PageIllustration from "../partials/PageIllustration";
 import Career from "../partials/Career";
+import Cta from "../partials/Cta";
 function SignIn() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -30,8 +31,9 @@ function SignIn() {
               </div>
 
               <Career />
+              
               <Cta />
-              <Newsletter />
+              
             </div>
           </div>
         </section>
