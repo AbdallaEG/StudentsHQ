@@ -23,7 +23,7 @@ function Cta() {
               data-aos-delay="200"
               data-aos-anchor="[data-aos-id-cta]"
             >
-              Bli en av de dyktigste studenter som velger å investe tiden
+              Få en fot inn i arbeidsmarkedet mens du studerer og utvikle din kompetanse{" "}
             </p>
 
             {/* CTA button */}
@@ -56,7 +56,7 @@ function Cta() {
                 >
                   <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                 </svg>
-                <span>Free 14-day trial</span>
+                <span>Gratis registrering</span>
               </li>
               <li
                 className="flex items-center mx-3 my-1"
@@ -71,7 +71,7 @@ function Cta() {
                 >
                   <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                 </svg>
-                <span>Unlimited users</span>
+                <span>30 dagers retur</span>
               </li>
               <li
                 className="flex items-center mx-3 my-1"
