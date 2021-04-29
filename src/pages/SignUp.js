@@ -51,6 +51,7 @@ function SignUp() {
       degreeType: type,
       degreeYear: year,
       info: info,
+     
     };
     firebase.database().ref("Signups/" + number).set(data);
     history.push("/contact")
