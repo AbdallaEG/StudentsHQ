@@ -107,7 +107,7 @@ function Career() {
                 <div className="text-lg text-gray-400 mb-3">
                   På vegne av en av våre klienter søker vi etter en front-end
                   utvikler. Vi ser etter deg som er komfortabel med utvikling av
-                  nettsider og har interesse for e-commerce.
+                  nettsider og har interesse for web-designing.
                 </div>
                 <div className="text-gray-400 flex flex-wrap items-center">
                   <div className="inline-flex items-center">
