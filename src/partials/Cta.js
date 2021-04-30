@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 function Cta() {
   return (
     <section>
@@ -33,12 +33,12 @@ function Cta() {
               data-aos-delay="400"
               data-aos-anchor="[data-aos-id-cta]"
             >
-              <a
+              <Link
                 className="btn text-white bg-purple-600 hover:bg-purple-700"
-                href="#0"
+                to="signup"
               >
                 Registrer deg
-              </a>
+              </Link>
             </div>
 
             {/* Check list */}
