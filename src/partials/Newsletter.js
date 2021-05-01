@@ -85,7 +85,7 @@ function Newsletter() {
               <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none">
                 <input
                   type="text"
-                  className="w-full text-center appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-white placeholder-purple-400"
+                  className=" rounded-3xl focus:w-2 w-full text-center appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-white placeholder-purple-400"
                   placeholder="Navn..."
                   required
                   value={name}
@@ -93,7 +93,7 @@ function Newsletter() {
                 />
                 <input
                   type="integer"
-                  className="w-full text-center appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0  text-white placeholder-purple-400"
+                  className=" rounded-3xl w-full text-center appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0  text-white placeholder-purple-400"
                   placeholder="Telefonnummer..."
                   required
                   value={number}
@@ -101,7 +101,7 @@ function Newsletter() {
                 />
               </div>
               <button
-                className="btn text-purple-600 bg-purple-100 hover:bg-white shadow text-center w-full mt-1"
+                className="rounded-3xl btn text-purple-600 bg-purple-100 hover:bg-white shadow text-center w-full mt-1"
                 href="#0"
               >
                 Ring meg!
